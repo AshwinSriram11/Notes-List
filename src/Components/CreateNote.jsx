@@ -28,29 +28,35 @@ function CreateNote(props) {
 
   return (
     <div className="createNote">
-      <h2>Oragnize your notes here</h2>
-      <form onSubmit={HandleClick}>
-        <label>
-          Note Title :
-          <input
-            onChange={HandleChange}
-            value={note.title}
-            name="title"
-            type="text"
-          />
-        </label>
-        <label>
-          Note content :
-          <input
-            onChange={HandleChange}
-            name="content"
-            value={note.content}
-            id="title"
-            type="text"
-          />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
+      <div className="createHeading">
+        <h2>Oragnize your notes here</h2>
+      </div>
+      <div className="form">
+        <form onSubmit={HandleClick}>
+          <label>
+            Title
+            <input
+              onChange={HandleChange}
+              value={note.title}
+              name="title"
+              type="text"
+            />
+          </label>
+          <label>
+            Content
+            <textarea
+              onChange={HandleChange}
+              name="content"
+              value={note.content}
+              id="title"
+              type="text"
+            />
+          </label>
+          <div className="btn">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

@@ -6,13 +6,18 @@ const Note = (props) => {
   }
 
   return (
-    <div>
-      {Notes && Notes.map((note) => {
+    <div className="notes">
+      {Notes &&
+        Notes.map((note) => {
           return (
-            <div key={note.id}>
+            <div key={note.id} className="note">
               <h3>{note.title}</h3>
               <p>{note.content}</p>
-              <button onClick={() => HandleClick(note.id)}>Delete Note</button>
+              <div className="del-btn">
+                <button onClick={() => HandleClick(note.id)}>
+                  Delete Note
+                </button>
+              </div>
             </div>
           );
         })}
